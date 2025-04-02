@@ -10,13 +10,6 @@ abstract class AppStyles {
     fontSize: 16,
     fontWeight: FontWeight.w400,
   );
-
-  static TextStyle styleMedium16 = baseMontserrat.copyWith(
-    color: AppColors.kPrimaryColor,
-    fontSize: 16,
-    fontWeight: FontWeight.w500,
-  );
-
   static TextStyle styleSemiBold16 = baseMontserrat.copyWith(
     color: AppColors.kPrimaryColor,
     fontSize: 16,
