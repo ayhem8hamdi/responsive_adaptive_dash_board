@@ -7,6 +7,7 @@ class Dhashboardscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Color(0XFFF7F9FA),
       body: DashboardScreenBody(),
     );
   }

@@ -8,21 +8,26 @@ class CustomUserListTile extends StatelessWidget {
   final UserModel user;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: const Color(0XFFFAFAFA),
-      elevation: 0,
-      child: ListTile(
-        leading: SvgPicture.asset(
-          user.image,
-          width: 35,
-        ),
-        title: Text(
-          user.userName,
-          style: AppStyles.styleSemiBold16,
-        ),
-        subtitle: Text(
-          user.userMail,
-          style: AppStyles.styleRegular12,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 7),
+      child: Card(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
+        color: const Color(0XFFFAFAFA),
+        elevation: 0,
+        child: ListTile(
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+          leading: SvgPicture.asset(
+            user.image,
+            width: 35,
+          ),
+          title: Text(
+            user.userName,
+            style: AppStyles.styleSemiBold16,
+          ),
+          subtitle: Text(
+            user.userMail,
+            style: AppStyles.styleRegular12,
+          ),
         ),
       ),
     );
