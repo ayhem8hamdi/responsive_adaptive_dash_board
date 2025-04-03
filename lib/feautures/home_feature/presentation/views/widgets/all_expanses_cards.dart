@@ -30,7 +30,7 @@ class AllExpansesCards extends StatelessWidget {
           AllExpansesCustomCard(
               image: AppAssets.outcome,
               item: AllExpansesItemModel(
-                  type: 'Expanses', date: 'April 2025', price: '\$28,117'))
+                  type: 'Outcome', date: 'April 2025', price: '\$28,117'))
         ],
       ),
     );

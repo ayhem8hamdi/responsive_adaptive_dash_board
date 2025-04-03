@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_styles.dart';
 import 'package:responsive_dash_board/feautures/home_feature/data/models/all_expanses_item_model.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/all_expanses_item_logo.dart';
 
@@ -22,19 +23,28 @@ class AllExpansesCustomCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AllExpansesItemLogo(
+          AllExpansesItemHeader(
             image: image,
           ),
           const SizedBox(
-            height: 10,
+            height: 34,
           ),
-          Text(item.type),
-          const SizedBox(height: 5),
-          Text(item.date),
+          Text(
+            item.type,
+            style: AppStyles.styleSemiBold16,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            item.date,
+            style: AppStyles.styleRegular14,
+          ),
           const SizedBox(
-            height: 9,
+            height: 16,
           ),
-          Text(item.price)
+          Text(
+            item.price,
+            style: AppStyles.styleSemiBold24,
+          )
         ],
       ),
     ));
