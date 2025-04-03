@@ -3,7 +3,7 @@ import 'package:responsive_dash_board/core/utils/app_images.dart';
 import 'package:responsive_dash_board/feautures/home_feature/data/models/all_expanses_item_model.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/all_expanses_custom_card.dart';
 
-class AllExpansesCards extends StatelessWidget {
+class AllExpansesCards extends StatefulWidget {
   const AllExpansesCards({super.key});
   static const List<AllExpansesItemModel> items = [
     AllExpansesItemModel(
@@ -22,12 +22,36 @@ class AllExpansesCards extends StatelessWidget {
         date: 'April 2025',
         price: '\$28,117'),
   ];
+
+  @override
+  State<AllExpansesCards> createState() => _AllExpansesCardsState();
+}
+
+class _AllExpansesCardsState extends State<AllExpansesCards> {
+  bool isActive = false;
+  int activeIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20, right: 17, left: 17),
       child: Row(
-          children: items.map((e) => AllExpansesCustomCard(item: e)).toList()),
+        children: AllExpansesCards.items.map((item) {
+          int index = AllExpansesCards.items.indexOf(item);
+
+          return Expanded(
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  activeIndex = index;
+                });
+              },
+              child: AllExpansesCustomCard(
+                  item: item, isActive: index == activeIndex),
+            ),
+          );
+        }).toList(),
+      ),
     );
   }
 }

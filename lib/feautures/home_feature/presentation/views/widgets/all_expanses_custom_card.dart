@@ -4,13 +4,28 @@ import 'package:responsive_dash_board/feautures/home_feature/data/models/all_exp
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/all_expanses_item_logo.dart';
 
 class AllExpansesCustomCard extends StatelessWidget {
-  const AllExpansesCustomCard({super.key, required this.item});
+  const AllExpansesCustomCard(
+      {super.key, required this.item, required this.isActive});
 
   final AllExpansesItemModel item;
+  final bool isActive;
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
+    return isActive == true
+        ? ActiveCardItem(item: item, isActive: isActive)
+        : InActiveCardItem(item: item, isActive: isActive);
+  }
+}
+
+class InActiveCardItem extends StatelessWidget {
+  const InActiveCardItem(
+      {super.key, required this.item, required this.isActive});
+  final AllExpansesItemModel item;
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       margin: const EdgeInsets.symmetric(horizontal: 8),
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
@@ -47,6 +62,53 @@ class AllExpansesCustomCard extends StatelessWidget {
           )
         ],
       ),
-    ));
+    );
+  }
+}
+
+class ActiveCardItem extends StatelessWidget {
+  const ActiveCardItem({super.key, required this.item, required this.isActive});
+  final AllExpansesItemModel item;
+  final bool isActive;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      decoration: BoxDecoration(
+        color: const Color(0xFF4EB7F2),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          AllExpansesItemHeader(
+            image: item.image,
+            isActive: true,
+          ),
+          const SizedBox(
+            height: 34,
+          ),
+          Text(
+            item.type,
+            style: AppStyles.styleSemiBold16.copyWith(color: Colors.white),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            item.date,
+            style: AppStyles.styleRegular14
+                .copyWith(color: const Color(0XFFFAFAFA)),
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          Text(
+            item.price,
+            style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+          )
+        ],
+      ),
+    );
   }
 }

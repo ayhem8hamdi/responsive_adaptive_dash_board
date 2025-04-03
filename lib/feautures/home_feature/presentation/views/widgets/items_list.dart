@@ -11,7 +11,7 @@ class ItemsList extends StatefulWidget {
 }
 
 class _ItemsListState extends State<ItemsList> {
-  int activeIndex = -1;
+  int activeIndex = 0;
   final List<DrawerItemModel> items = const [
     DrawerItemModel(image: AppAssets.dashboard, title: 'Dashboard'),
     DrawerItemModel(image: AppAssets.transaction, title: 'My Transaction'),

@@ -3,8 +3,11 @@ import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board/core/utils/app_colors.dart';
 
 class AllExpansesItemHeader extends StatelessWidget {
-  const AllExpansesItemHeader({super.key, required this.image});
+  const AllExpansesItemHeader(
+      {super.key, required this.image, this.isActive = false});
+
   final String image;
+  final bool? isActive;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -12,23 +15,26 @@ class AllExpansesItemHeader extends StatelessWidget {
         Container(
             width: 60,
             height: 60,
-            decoration: const ShapeDecoration(
-              shape: OvalBorder(),
-              color: Color(0xFFFAFAFA),
+            decoration: ShapeDecoration(
+              shape: const OvalBorder(),
+              color: isActive == false
+                  ? const Color(0xFFFAFAFA)
+                  : Colors.white.withOpacity(0.10000000149011612),
             ),
             child: Center(
               child: SvgPicture.asset(
                 image,
                 // ignore: deprecated_member_use
-                color: const Color(0xFF4EB7F2),
+                color:
+                    isActive == false ? const Color(0xFF4EB7F2) : Colors.white,
               ),
             )),
         const Spacer(),
         Transform.rotate(
             angle: 3.1416,
-            child: const Icon(
+            child: Icon(
               Icons.arrow_back_ios_new_outlined,
-              color: AppColors.kPrimaryColor,
+              color: isActive == false ? AppColors.kPrimaryColor : Colors.white,
             ))
       ],
     );
