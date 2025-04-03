@@ -28,31 +28,38 @@ class AllExpansesCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        AllExpansesCustomCard(),
-        SizedBox(
-          width: 10,
-        ),
-        AllExpansesCustomCard(),
-        SizedBox(
-          width: 10,
-        ),
-        AllExpansesCustomCard()
-      ],
+    return const Padding(
+      padding: EdgeInsets.only(top: 20),
+      child: Row(
+        children: [
+          AllExpansesCustomCard(
+            image: AppAssets.income,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          AllExpansesCustomCard(image: AppAssets.income),
+          SizedBox(
+            width: 10,
+          ),
+          AllExpansesCustomCard(image: AppAssets.outcome)
+        ],
+      ),
     );
   }
 }
 
 class AllExpansesCustomCard extends StatelessWidget {
-  const AllExpansesCustomCard({super.key});
+  const AllExpansesCustomCard({super.key, required this.image});
+  final String image;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
         child: Container(
-      padding: const EdgeInsets.all(12),
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
+          color: Colors.white,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
             width: 1,
@@ -61,36 +68,49 @@ class AllExpansesCustomCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              Container(
-                  padding: EdgeInsets.all(9),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(120),
-                    color: const Color(0xFFAAAAAA),
-                  ),
-                  child: SvgPicture.asset(AppAssets.income)),
-              const Spacer(),
-              Transform.rotate(
-                  angle: 3.1416,
-                  child: Icon(
-                    Icons.arrow_back_ios_new_outlined,
-                    color: AppColors.kPrimaryColor,
-                  ))
-            ],
+          AllExpansesItemLogo(
+            image: image,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Text('balance'),
-          SizedBox(height: 5),
-          Text('April 2022'),
-          SizedBox(
+          const Text('balance'),
+          const SizedBox(height: 5),
+          const Text('April 2022'),
+          const SizedBox(
             height: 9,
           ),
-          Text('\$20,129')
+          const Text('\$20,129')
         ],
       ),
     ));
+  }
+}
+
+class AllExpansesItemLogo extends StatelessWidget {
+  const AllExpansesItemLogo({super.key, required this.image});
+  final String image;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Container(
+            width: 60,
+            height: 60,
+            padding: const EdgeInsets.all(9),
+            decoration: const ShapeDecoration(
+              shape: OvalBorder(),
+              color: Color(0xFFFAFAFA),
+            ),
+            child: SvgPicture.asset(image)),
+        const Spacer(),
+        Transform.rotate(
+            angle: 3.1416,
+            child: const Icon(
+              Icons.arrow_back_ios_new_outlined,
+              color: AppColors.kPrimaryColor,
+            ))
+      ],
+    );
   }
 }
