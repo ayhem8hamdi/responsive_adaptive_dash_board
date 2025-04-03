@@ -7,15 +7,18 @@ class AllExpansesHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'All Expanses',
-          style: AppStyles.styleSemiBold20,
-        ),
-        const Spacer(),
-        const AllExpansesDate()
-      ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 25),
+      child: Row(
+        children: [
+          Text(
+            'All Expanses',
+            style: AppStyles.styleSemiBold20,
+          ),
+          const Spacer(),
+          const AllExpansesDate()
+        ],
+      ),
     );
   }
 }

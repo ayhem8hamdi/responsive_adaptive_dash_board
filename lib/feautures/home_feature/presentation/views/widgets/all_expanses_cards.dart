@@ -5,34 +5,29 @@ import 'package:responsive_dash_board/feautures/home_feature/presentation/views/
 
 class AllExpansesCards extends StatelessWidget {
   const AllExpansesCards({super.key});
-
+  static const List<AllExpansesItemModel> items = [
+    AllExpansesItemModel(
+        image: AppAssets.balance,
+        type: 'Balance',
+        date: 'April 2025',
+        price: '\$20,129'),
+    AllExpansesItemModel(
+        image: AppAssets.income,
+        type: 'Income',
+        date: 'April 2025',
+        price: '\$24,129'),
+    AllExpansesItemModel(
+        image: AppAssets.outcome,
+        type: 'Outcome',
+        date: 'April 2025',
+        price: '\$28,117'),
+  ];
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(top: 20),
+    return Padding(
+      padding: const EdgeInsets.only(top: 20, right: 17, left: 17),
       child: Row(
-        children: [
-          AllExpansesCustomCard(
-            image: AppAssets.balance,
-            item: AllExpansesItemModel(
-                type: 'Balance', date: 'April 2025', price: '\$20,129'),
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          AllExpansesCustomCard(
-              image: AppAssets.income,
-              item: AllExpansesItemModel(
-                  type: 'Income', date: 'April 2025', price: '\$24,129')),
-          SizedBox(
-            width: 10,
-          ),
-          AllExpansesCustomCard(
-              image: AppAssets.outcome,
-              item: AllExpansesItemModel(
-                  type: 'Outcome', date: 'April 2025', price: '\$28,117'))
-        ],
-      ),
+          children: items.map((e) => AllExpansesCustomCard(item: e)).toList()),
     );
   }
 }

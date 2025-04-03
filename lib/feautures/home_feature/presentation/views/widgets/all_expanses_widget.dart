@@ -9,7 +9,7 @@ class AllExpansesWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 20),
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.only(top: 25, bottom: 25),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.white,
