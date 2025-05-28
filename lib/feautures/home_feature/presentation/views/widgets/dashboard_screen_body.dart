@@ -6,7 +6,6 @@ import 'package:responsive_dash_board/feautures/home_feature/presentation/views/
 
 class DashboardScreenBody extends StatelessWidget {
   const DashboardScreenBody({super.key});
-  //lazy building for layouts .
   @override
   Widget build(BuildContext context) {
     return AdaptiveLayoutWidget(

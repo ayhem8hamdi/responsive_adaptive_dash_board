@@ -5,7 +5,7 @@ import 'package:responsive_dash_board/feautures/home_feature/presentation/views/
 void main() {
   runApp(DevicePreview(builder: (context) {
     return const DashBoard();
-  }));
+  })); 
 }
 
 class DashBoard extends StatelessWidget {

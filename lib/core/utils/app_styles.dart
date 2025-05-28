@@ -11,7 +11,7 @@ abstract class AppStyles {
     fontWeight: FontWeight.w400,
   );
   static TextStyle styleSemiBold16 = baseMontserrat.copyWith(
-    color: AppColors.kPrimaryColor,
+    color: const Color.fromARGB(255, 20, 84, 121),
     fontSize: 16,
     fontWeight: FontWeight.w600,
   );

@@ -1,6 +1,5 @@
 abstract class AppAssets {
   static const String _basePath = 'assets/images/';
-
   static const String avatar1 = '${_basePath}avatar_1.svg';
   static const String avatar2 = '${_basePath}avatar_2.svg';
   static const String balance = '${_basePath}balance.svg';

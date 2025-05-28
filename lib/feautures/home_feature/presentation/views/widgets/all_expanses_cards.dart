@@ -5,7 +5,13 @@ import 'package:responsive_dash_board/feautures/home_feature/presentation/views/
 
 class AllExpansesCards extends StatefulWidget {
   const AllExpansesCards({super.key});
-  static const List<AllExpansesItemModel> items = [
+
+  @override
+  State<AllExpansesCards> createState() => _AllExpansesCardsState();
+}
+
+class _AllExpansesCardsState extends State<AllExpansesCards> {
+  final List<AllExpansesItemModel> items = const [
     AllExpansesItemModel(
         image: AppAssets.balance,
         type: 'Balance',
@@ -23,11 +29,6 @@ class AllExpansesCards extends StatefulWidget {
         price: '\$28,117'),
   ];
 
-  @override
-  State<AllExpansesCards> createState() => _AllExpansesCardsState();
-}
-
-class _AllExpansesCardsState extends State<AllExpansesCards> {
   bool isActive = false;
   int activeIndex = 0;
 
@@ -36,8 +37,8 @@ class _AllExpansesCardsState extends State<AllExpansesCards> {
     return Padding(
       padding: const EdgeInsets.only(top: 20, right: 17, left: 17),
       child: Row(
-        children: AllExpansesCards.items.map((item) {
-          int index = AllExpansesCards.items.indexOf(item);
+        children: items.map((item) {
+          int index = items.indexOf(item);
 
           return Expanded(
             child: GestureDetector(

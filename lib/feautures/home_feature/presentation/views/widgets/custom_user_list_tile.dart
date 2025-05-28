@@ -20,13 +20,21 @@ class CustomUserListTile extends StatelessWidget {
             user.image,
             width: 35,
           ),
-          title: Text(
-            user.userName,
-            style: AppStyles.styleSemiBold16,
+          title: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              user.userName,
+              style: AppStyles.styleSemiBold16,
+            ),
           ),
-          subtitle: Text(
-            user.userMail,
-            style: AppStyles.styleRegular12,
+          subtitle: FittedBox(
+            alignment: Alignment.centerLeft,
+            fit: BoxFit.scaleDown,
+            child: Text(
+              user.userMail,
+              style: AppStyles.styleRegular12,
+            ),
           ),
         ),
       ),
