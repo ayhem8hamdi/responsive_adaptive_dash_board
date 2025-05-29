@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/dhashboard_screen.dart';
 
 void main() {
-  runApp(DevicePreview(builder: (context) {
-    return const DashBoard();
-  })); 
+  runApp(DevicePreview(
+      enabled: false,
+      builder: (context) {
+        return const DashBoard();
+      }));
 }
 
 class DashBoard extends StatelessWidget {

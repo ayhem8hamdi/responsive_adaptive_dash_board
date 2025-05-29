@@ -10,7 +10,7 @@ class CustomUserListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
+      padding: const EdgeInsets.only(right: 7, top: 3, bottom: 3),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         color: const Color(0XFFFAFAFA),
