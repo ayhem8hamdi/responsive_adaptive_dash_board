@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 
-class LatestTransactionWidget extends StatelessWidget {
-  const LatestTransactionWidget({super.key});
-
+class QuickInvoiceMeduimTitles extends StatelessWidget {
+  const QuickInvoiceMeduimTitles({super.key, required this.text});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Text(
-      'Last Transaction',
+      text,
       style: AppStyles.styleRegular16,
     );
   }
