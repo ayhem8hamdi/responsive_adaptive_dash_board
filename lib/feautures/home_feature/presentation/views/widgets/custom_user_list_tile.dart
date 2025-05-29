@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 import 'package:responsive_dash_board/feautures/home_feature/data/models/user_model.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/fitted_text.dart';
 
 class CustomUserListTile extends StatelessWidget {
   const CustomUserListTile({super.key, required this.user});
@@ -15,29 +16,17 @@ class CustomUserListTile extends StatelessWidget {
         color: const Color(0XFFFAFAFA),
         elevation: 0,
         child: ListTile(
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
-          leading: SvgPicture.asset(
-            user.image,
-            width: 35,
-          ),
-          title: FittedBox(
-            alignment: Alignment.centerLeft,
-            fit: BoxFit.scaleDown,
-            child: Text(
-              user.userName,
-              style: AppStyles.styleSemiBold16,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+            shape:
+                const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+            leading: SvgPicture.asset(
+              user.image,
+              width: 35,
             ),
-          ),
-          subtitle: FittedBox(
-            alignment: Alignment.centerLeft,
-            fit: BoxFit.scaleDown,
-            child: Text(
-              user.userMail,
-              style: AppStyles.styleRegular12,
-            ),
-          ),
-        ),
+            title: FittedText(
+                text: user.userName, style: AppStyles.styleSemiBold16),
+            subtitle: FittedText(
+                text: user.userMail, style: AppStyles.styleRegular12)),
       ),
     );
   }
