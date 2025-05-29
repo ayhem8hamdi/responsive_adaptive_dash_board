@@ -3,6 +3,8 @@ import 'package:responsive_dash_board/core/utils/app_images.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 import 'package:responsive_dash_board/feautures/home_feature/data/models/user_model.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/custom_user_list_tile.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/last_transaction_section.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/quick_invoice_header.dart';
 
 class QuickInvoiceWidget extends StatelessWidget {
   const QuickInvoiceWidget({super.key});
@@ -30,32 +32,6 @@ class QuickInvoiceWidget extends StatelessWidget {
           QuickInvoiceListBuilder(), // Corrected ListBuilder here
         ],
       ),
-    );
-  }
-}
-
-class QuickInvoiceHeader extends StatelessWidget {
-  const QuickInvoiceHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          'Quick InVoice',
-          style: AppStyles.styleSemiBold20,
-        ),
-        const Spacer(),
-        Container(
-          padding: const EdgeInsets.all(15),
-          decoration:
-              ShapeDecoration(shape: OvalBorder(), color: Color(0XFFFAFAFA)),
-          child: Icon(
-            Icons.add,
-            color: Color(0xFF4EB7F2),
-          ),
-        )
-      ],
     );
   }
 }
@@ -92,7 +68,7 @@ class QuickInvoiceListBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: 76,
       child: Padding(
         padding: const EdgeInsets.only(left: 8),
         child: ListView.builder(
@@ -102,18 +78,6 @@ class QuickInvoiceListBuilder extends StatelessWidget {
               IntrinsicWidth(child: CustomUserListTile(user: users[index])),
         ),
       ),
-    );
-  }
-}
-
-class LatestTransactionWidget extends StatelessWidget {
-  const LatestTransactionWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      'Last Transaction',
-      style: AppStyles.styleRegular16,
     );
   }
 }

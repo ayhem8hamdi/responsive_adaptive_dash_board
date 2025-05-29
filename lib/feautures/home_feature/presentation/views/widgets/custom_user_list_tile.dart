@@ -9,12 +9,13 @@ class CustomUserListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 7),
+      padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
       child: Card(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
         color: const Color(0XFFFAFAFA),
         elevation: 0,
         child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           shape: const RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           leading: SvgPicture.asset(
             user.image,
