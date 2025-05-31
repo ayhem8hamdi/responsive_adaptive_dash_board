@@ -13,4 +13,5 @@ abstract class AppAssets {
   static const String statistics = '${_basePath}statistics.svg';
   static const String transaction = '${_basePath}transaction.svg';
   static const String wallet = '${_basePath}wallet.svg';
+  static const String cardBackground = '${_basePath}card_background.png';
 }

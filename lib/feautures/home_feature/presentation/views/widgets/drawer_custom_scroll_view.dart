@@ -16,11 +16,14 @@ class DrawerCustomScrollView extends StatelessWidget {
     return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
-          child: CustomUserListTile(
-            user: UserModel(
-                image: AppAssets.avatar1,
-                userName: 'Ayhem Hamdi',
-                userMail: 'ayhemhamdi24@gmail.com'),
+          child: Padding(
+            padding: EdgeInsets.only(left: 7),
+            child: CustomUserListTile(
+              user: UserModel(
+                  image: AppAssets.avatar1,
+                  userName: 'Ayhem Hamdi',
+                  userMail: 'ayhemhamdi24@gmail.com'),
+            ),
           ),
         ),
         SliverToBoxAdapter(child: SizedBox(height: 8)),

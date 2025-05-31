@@ -12,9 +12,11 @@ class AllExpansesItemHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-            width: 60,
-            height: 60,
+        Flexible(
+            child: AspectRatio(
+          aspectRatio: 1,
+          child: Container(
+            padding: const EdgeInsets.all(3),
             decoration: ShapeDecoration(
               shape: const OvalBorder(),
               color: isActive == false
@@ -22,13 +24,17 @@ class AllExpansesItemHeader extends StatelessWidget {
                   : Colors.white.withOpacity(0.10000000149011612),
             ),
             child: Center(
-              child: SvgPicture.asset(
-                image,
-                // ignore: deprecated_member_use
-                color:
-                    isActive == false ? const Color(0xFF4EB7F2) : Colors.white,
+              child: FittedBox(
+                child: SvgPicture.asset(
+                  image,
+                  color: isActive == false
+                      ? const Color(0xFF4EB7F2)
+                      : Colors.white,
+                ),
               ),
-            )),
+            ),
+          ),
+        )),
         const Spacer(),
         Transform.rotate(
             angle: 3.1416,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/fitted_text.dart';
 
 class QuickInvoiceButtonItem extends StatelessWidget {
   const QuickInvoiceButtonItem(
@@ -14,8 +15,8 @@ class QuickInvoiceButtonItem extends StatelessWidget {
       decoration:
           BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
       child: Center(
-        child: Text(
-          text,
+        child: FittedText(
+          text: text,
           style: AppStyles.styleSemiBold18.copyWith(
               color: color == const Color(0XFFFFFFFF)
                   ? AppColors.kSecondaryColor
