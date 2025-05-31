@@ -14,11 +14,14 @@ class DesktopLayout extends StatelessWidget {
         SizedBox(
           width: 32,
         ),
-        Expanded(flex: 6, child: DesktopBody()),
+        Expanded(flex: 5, child: DesktopBody()),
         SizedBox(
           width: 24,
         ),
-        Expanded(flex: 3, child: RightSection())
+        Expanded(flex: 3, child: RightSection()),
+        SizedBox(
+          width: 32,
+        )
       ],
     );
   }
