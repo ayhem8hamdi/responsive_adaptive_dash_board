@@ -24,13 +24,10 @@ class AllExpansesItemHeader extends StatelessWidget {
                   : Colors.white.withOpacity(0.10000000149011612),
             ),
             child: Center(
-              child: FittedBox(
-                child: SvgPicture.asset(
-                  image,
-                  color: isActive == false
-                      ? const Color(0xFF4EB7F2)
-                      : Colors.white,
-                ),
+              child: SvgPicture.asset(
+                image,
+                color:
+                    isActive == false ? const Color(0xFF4EB7F2) : Colors.white,
               ),
             ),
           ),
