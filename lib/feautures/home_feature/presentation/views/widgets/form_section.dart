@@ -15,6 +15,9 @@ class FormSection extends StatelessWidget {
           userInputModel2: UserInputModel(
               title: 'Customer Email', textHint: 'Type customer Email'),
         ),
+        SizedBox(
+          height: 24,
+        ),
         FormRow(
           userInputModel1:
               UserInputModel(title: 'Item name', textHint: 'Type item name'),

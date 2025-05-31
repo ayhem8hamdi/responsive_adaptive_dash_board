@@ -18,6 +18,9 @@ class FormRow extends StatelessWidget {
                 userInputModel: UserInputModel(
                     title: userInputModel1.title,
                     textHint: userInputModel1.textHint))),
+        const SizedBox(
+          width: 16,
+        ),
         Expanded(
             child: FormRowWidget(
                 userInputModel: UserInputModel(
