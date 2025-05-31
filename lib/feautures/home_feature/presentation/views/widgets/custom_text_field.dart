@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -7,6 +8,7 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: const TextStyle(color: AppColors.kPrimaryColor),
       decoration: InputDecoration(
         hintText: text,
         hintStyle:
