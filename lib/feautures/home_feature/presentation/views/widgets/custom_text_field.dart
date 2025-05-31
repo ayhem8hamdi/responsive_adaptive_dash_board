@@ -28,32 +28,3 @@ class CustomTextField extends StatelessWidget {
         borderSide: BorderSide(color: Color(0XFFFAFAFA)));
   }
 }
-
-class FormSection extends StatelessWidget {
-  const FormSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      children: [FormRow()],
-    );
-  }
-}
-
-class FormRow extends StatelessWidget {
-  const FormRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row();
-  }
-}
-
-class FormRowWidget extends StatelessWidget {
-  const FormRowWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
