@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 
 class QuickInvoiceButtonItem extends StatelessWidget {
@@ -12,9 +13,14 @@ class QuickInvoiceButtonItem extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       decoration:
           BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
-      child: Text(
-        text,
-        style: AppStyles.styleSemiBold18,
+      child: Center(
+        child: Text(
+          text,
+          style: AppStyles.styleSemiBold18.copyWith(
+              color: color == const Color(0XFFFFFFFF)
+                  ? AppColors.kSecondaryColor
+                  : const Color(0XFFFFFFFF)),
+        ),
       ),
     );
   }

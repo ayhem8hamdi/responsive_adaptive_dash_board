@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/feautures/home_feature/data/models/user_input_model.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/form_row.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/quick_invoice_buttons_section.dart';
 
 class FormSection extends StatelessWidget {
   const FormSection({super.key});
@@ -23,6 +24,10 @@ class FormSection extends StatelessWidget {
               UserInputModel(title: 'Item name', textHint: 'Type item name'),
           userInputModel2: UserInputModel(title: 'Item mount', textHint: 'USD'),
         ),
+        SizedBox(
+          height: 24,
+        ),
+        QuickInvoiceButtonsSection()
       ],
     );
   }
