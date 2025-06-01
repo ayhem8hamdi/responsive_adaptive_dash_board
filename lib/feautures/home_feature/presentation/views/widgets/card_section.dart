@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/my_card_page_view.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/my_upper_items.dart';
 
 class CardSection extends StatelessWidget {
   const CardSection({super.key});
@@ -14,6 +14,6 @@ class CardSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           color: Colors.white,
         ),
-        child: const MyCardPageView());
+        child: const MyCardUpperItems());
   }
 }
