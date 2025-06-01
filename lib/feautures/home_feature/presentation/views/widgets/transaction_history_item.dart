@@ -23,14 +23,14 @@ class TransactionHistoryItem extends StatelessWidget {
       ),
       child: ListTile(
         title: Padding(
-          padding: const EdgeInsets.only(left: 4),
+          padding: const EdgeInsets.only(left: 4, top: 8),
           child: FittedText(
             text: transactionModel.name,
             style: AppStyles.styleSemiBold16,
           ),
         ),
         subtitle: Padding(
-          padding: const EdgeInsets.only(top: 6, left: 4),
+          padding: const EdgeInsets.only(top: 4, left: 4, bottom: 8),
           child: FittedText(
             text: transactionModel.date,
             style:

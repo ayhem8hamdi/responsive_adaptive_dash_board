@@ -9,13 +9,9 @@ class TransactionHistoryList extends StatelessWidget {
     TransactionModel(
         name: 'Cash Withdrawal', date: '13 Apr, 2022', mount: r'$20,129'),
     TransactionModel(
-        name: 'Landing Page project',
-        date: '13 Apr, 2025 at 3:30 PM',
-        mount: r'$2,000'),
+        name: 'Page project', date: '13 Apr, 2025', mount: r'$2,000'),
     TransactionModel(
-        name: 'Juni Mobile App project',
-        date: '3 June, 2025 at 6:30 PM',
-        mount: r'$20,129'),
+        name: 'Mobile App project', date: '3 June, 2025', mount: r'$20,129'),
   ];
 
   @override

@@ -15,10 +15,13 @@ class TransactionHistoryHeader extends StatelessWidget {
           style: AppStyles.styleSemiBold20,
         ),
         const Spacer(),
-        FittedText(
-            text: 'See all',
-            style: AppStyles.styleMedium20
-                .copyWith(color: AppColors.kSecondaryColor, fontSize: 16))
+        Padding(
+          padding: const EdgeInsets.only(right: 12),
+          child: FittedText(
+              text: 'See all',
+              style: AppStyles.styleMedium20
+                  .copyWith(color: AppColors.kSecondaryColor, fontSize: 16)),
+        )
       ],
     );
   }
