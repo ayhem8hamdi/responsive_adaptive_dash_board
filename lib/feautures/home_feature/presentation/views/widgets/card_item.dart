@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_images.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/fitted_text.dart';
 
 class MyCardItem extends StatelessWidget {
   const MyCardItem({super.key});
@@ -9,13 +10,16 @@ class MyCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 420 / 215,
+      aspectRatio: 420 / 259,
       child: Container(
         decoration: BoxDecoration(
-            image: const DecorationImage(
-                image: AssetImage(AppAssets.cardBackground)),
-            borderRadius: BorderRadius.circular(12),
-            color: AppColors.kSecondaryColor),
+          image: const DecorationImage(
+            image: AssetImage(AppAssets.cardBackground),
+            fit: BoxFit.cover,
+          ),
+          borderRadius: BorderRadius.circular(12),
+          color: AppColors.kSecondaryColor,
+        ),
         child: const CardItemBody(),
       ),
     );
@@ -29,16 +33,55 @@ class CardItemBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          title: Text(
-            'Name card',
-            style: AppStyles.styleRegular16,
+        Padding(
+          padding: const EdgeInsets.only(left: 31, right: 42, top: 16),
+          child: ListTile(
+            contentPadding: EdgeInsets.zero,
+            title: FittedText(
+              text: 'Name card',
+              style: AppStyles.styleRegular16.copyWith(color: Colors.white),
+            ),
+            subtitle: FittedText(
+              text: 'Ayhem Hamdi',
+              style: AppStyles.styleMedium20.copyWith(color: Colors.white),
+            ),
+            trailing: const Icon(Icons.image, color: Colors.white),
           ),
-          subtitle: Text(
-            'Ayhem Hamdi',
-            style: AppStyles.styleBold16,
-          ),
-        )
+        ),
+        const Spacer(),
+        Row(
+          children: [
+            Expanded(child: SizedBox()),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 24),
+                child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      FittedText(
+                        text: '0918 8124 0042 8129',
+                        style: AppStyles.styleSemiBold24
+                            .copyWith(color: Colors.white),
+                      ),
+                      const SizedBox(height: 9),
+                      FittedText(
+                        text: r'12\20 - 124',
+                        style: AppStyles.styleRegular16
+                            .copyWith(color: Colors.white),
+                      ),
+                      const SizedBox(
+                        height: 26,
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
