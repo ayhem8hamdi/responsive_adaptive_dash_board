@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
+import 'package:responsive_dash_board/feautures/home_feature/data/models/transaction_model.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/custom_horiz_line.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/fitted_text.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/my_upper_items.dart';
@@ -68,11 +70,25 @@ class TransactionHistorySection extends StatelessWidget {
   }
 }
 
-class TransactionHistoryList extends StatelessWidget {
-  const TransactionHistoryList({super.key});
-
+class TransactionHistoryItem extends StatelessWidget {
+  const TransactionHistoryItem({super.key, required this.transactionModel});
+  final TransactionModel transactionModel;
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return ListTile(
+      title: Text(
+        transactionModel.name,
+        style: AppStyles.styleSemiBold16,
+      ),
+      subtitle: Text(
+        transactionModel.date,
+        style: AppStyles.styleRegular16.copyWith(color: AppColors.kThirdColor),
+      ),
+      trailing: Text(
+        transactionModel.mount,
+        style:
+            AppStyles.styleSemiBold20.copyWith(color: const Color(0XFF7DD97B)),
+      ),
+    );
   }
 }
