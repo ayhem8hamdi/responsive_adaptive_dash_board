@@ -22,14 +22,20 @@ class TransactionHistoryItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ListTile(
-        title: FittedText(
-          text: transactionModel.name,
-          style: AppStyles.styleSemiBold16,
+        title: Padding(
+          padding: const EdgeInsets.only(left: 4),
+          child: FittedText(
+            text: transactionModel.name,
+            style: AppStyles.styleSemiBold16,
+          ),
         ),
-        subtitle: FittedText(
-          text: transactionModel.date,
-          style:
-              AppStyles.styleRegular16.copyWith(color: AppColors.kThirdColor),
+        subtitle: Padding(
+          padding: const EdgeInsets.only(top: 6, left: 4),
+          child: FittedText(
+            text: transactionModel.date,
+            style:
+                AppStyles.styleRegular16.copyWith(color: AppColors.kThirdColor),
+          ),
         ),
         trailing: FittedText(
           text: transactionModel.mount,
