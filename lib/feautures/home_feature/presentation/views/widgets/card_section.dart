@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_styles.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/custom_horiz_line.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/fitted_text.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/my_upper_items.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/transaction_history_header.dart';
 
@@ -47,8 +49,30 @@ class TransactionHistorySection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [TransactionHistoryHeader()],
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const TransactionHistoryHeader(),
+        const SizedBox(
+          height: 20,
+        ),
+        FittedText(
+          text: '2 June 2025',
+          style: AppStyles.styleMedium20.copyWith(fontSize: 16),
+        ),
+        const SizedBox(
+          height: 16,
+        )
+      ],
     );
+  }
+}
+
+class TransactionHistoryList extends StatelessWidget {
+  const TransactionHistoryList({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
