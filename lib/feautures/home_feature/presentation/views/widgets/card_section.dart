@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/custom_horiz_line.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/my_upper_items.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/transaction_history_header.dart';
 
 class CardSection extends StatelessWidget {
   const CardSection({super.key});
@@ -14,6 +16,39 @@ class CardSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
           color: Colors.white,
         ),
-        child: const MyCardUpperItems());
+        child: const CardSectionBody());
+  }
+}
+
+class CardSectionBody extends StatelessWidget {
+  const CardSectionBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        MyCardUpperItems(),
+        SizedBox(
+          height: 20,
+        ),
+        CustomHorizLine(),
+        SizedBox(
+          height: 20,
+        ),
+        TransactionHistorySection()
+      ],
+    );
+  }
+}
+
+class TransactionHistorySection extends StatelessWidget {
+  const TransactionHistorySection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Column(
+      children: [TransactionHistoryHeader()],
+    );
   }
 }
