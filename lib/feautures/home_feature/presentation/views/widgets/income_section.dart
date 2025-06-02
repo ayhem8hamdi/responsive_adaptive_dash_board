@@ -39,7 +39,7 @@ class ChartSection extends StatelessWidget {
     return const Row(
       children: [
         Expanded(
-          child: const AspectRatio(
+          child: AspectRatio(
             aspectRatio: 1,
             child: Incomechart(),
           ),

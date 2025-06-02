@@ -14,8 +14,12 @@ class IncomeInsights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children:
-          List.generate(4, (index) => IncomeInsightsRow(chartModel: l[index])),
+      children: List.generate(
+          4,
+          (index) => Padding(
+                padding: const EdgeInsets.only(bottom: 8),
+                child: IncomeInsightsRow(chartModel: l[index]),
+              )),
     );
   }
 }
