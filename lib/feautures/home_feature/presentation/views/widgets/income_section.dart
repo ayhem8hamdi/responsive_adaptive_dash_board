@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/all_expanses_date.dart';
+import 'package:fl_chart/fl_chart.dart';
 
 class IncomeSection extends StatelessWidget {
   const IncomeSection({super.key});
@@ -25,8 +26,29 @@ class IncomeSectionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [IncomeSectionHeader()],
+      children: [
+        IncomeSectionHeader(),
+        SizedBox(height: 12),
+      ],
     );
+  }
+}
+
+class Incomechart extends StatelessWidget {
+  const Incomechart({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return PieChart(getPieChartData());
+  }
+
+  PieChartData getPieChartData() {
+    return PieChartData(sections: [
+      PieChartSectionData(value: 40, color: const Color(0XFF208CC8)),
+      PieChartSectionData(value: 25, color: const Color(0XFF4EB7F2)),
+      PieChartSectionData(value: 20, color: const Color(0XFF064061)),
+      PieChartSectionData(value: 22, color: const Color(0XFFE2DECD))
+    ]);
   }
 }
 
