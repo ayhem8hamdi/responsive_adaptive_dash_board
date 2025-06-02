@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/core/utils/app_colors.dart';
 import 'package:responsive_dash_board/core/utils/app_styles.dart';
-import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/all_expanses_date.dart';
-import 'package:fl_chart/fl_chart.dart';
+import 'package:responsive_dash_board/feautures/home_feature/data/models/chart_model.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/income_chart_header.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/income_chart_item.dart';
 
 class IncomeSection extends StatelessWidget {
   const IncomeSection({super.key});
@@ -26,46 +28,89 @@ class IncomeSectionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
+      children: [IncomeSectionHeader(), SizedBox(height: 16), ChartSection()],
+    );
+  }
+}
+
+class ChartSection extends StatelessWidget {
+  const ChartSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
       children: [
-        IncomeSectionHeader(),
-        SizedBox(height: 12),
+        Expanded(
+          child: const AspectRatio(
+            aspectRatio: 1,
+            child: Incomechart(),
+          ),
+        ),
+        SizedBox(
+          width: 20,
+        ),
+        Expanded(child: IncomeInsights())
       ],
     );
   }
 }
 
-class Incomechart extends StatelessWidget {
-  const Incomechart({super.key});
+class IncomeInsights extends StatelessWidget {
+  const IncomeInsights({super.key});
+  static const List<ChartModel> l = [
+    ChartModel(color: Color(0XFF208CC8), type: 'Design ', pourcentage: '40%'),
+    ChartModel(color: Color(0XFF4EB7F2), type: 'product', pourcentage: '25%'),
+    ChartModel(color: Color(0XFF064061), type: 'royalti', pourcentage: '20%'),
+    ChartModel(color: Color(0XFFE2DECD), type: 'Other', pourcentage: '22%'),
+  ];
 
   @override
   Widget build(BuildContext context) {
-    return PieChart(getPieChartData());
-  }
-
-  PieChartData getPieChartData() {
-    return PieChartData(sections: [
-      PieChartSectionData(value: 40, color: const Color(0XFF208CC8)),
-      PieChartSectionData(value: 25, color: const Color(0XFF4EB7F2)),
-      PieChartSectionData(value: 20, color: const Color(0XFF064061)),
-      PieChartSectionData(value: 22, color: const Color(0XFFE2DECD))
-    ]);
+    return Column(
+      children:
+          List.generate(4, (index) => IncomeInsightsRow(chartModel: l[index])),
+    );
   }
 }
 
-class IncomeSectionHeader extends StatelessWidget {
-  const IncomeSectionHeader({super.key});
+class IncomeInsightsRow extends StatelessWidget {
+  const IncomeInsightsRow({
+    super.key,
+    required this.chartModel,
+  });
+  final ChartModel chartModel;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
+        Dotitem(color: chartModel.color),
+        const SizedBox(width: 10),
         Text(
-          'Income',
-          style: AppStyles.styleSemiBold20,
+          chartModel.type,
+          style: AppStyles.styleRegular16,
         ),
         const Spacer(),
-        const AllExpansesDate()
+        Text(
+          chartModel.pourcentage,
+          style: AppStyles.styleMedium20
+              .copyWith(color: AppColors.kSecondaryColor),
+        )
       ],
+    );
+  }
+}
+
+class Dotitem extends StatelessWidget {
+  const Dotitem({super.key, required this.color});
+  final Color color;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 12,
+      height: 12,
+      decoration:
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(12)),
     );
   }
 }
