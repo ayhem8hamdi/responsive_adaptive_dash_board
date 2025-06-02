@@ -45,7 +45,7 @@ class ChartSection extends StatelessWidget {
           ),
         ),
         SizedBox(
-          width: 20,
+          width: 40,
         ),
         Expanded(child: IncomeInsights())
       ],

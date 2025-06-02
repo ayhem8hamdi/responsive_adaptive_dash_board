@@ -22,20 +22,23 @@ class TabletLayout extends StatelessWidget {
 }
 
 class TabletLayoutbody extends StatelessWidget {
-  const TabletLayoutbody({super.key});
-
+  const TabletLayoutbody({super.key, this.isMobile = false});
+  final bool isMobile;
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
+    return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(child: AllExpansesWidget()),
-        SliverToBoxAdapter(child: QuickInvoiceWidget()),
         SliverToBoxAdapter(
+            child: AllExpansesWidget(
+          isMobile: isMobile,
+        )),
+        const SliverToBoxAdapter(child: QuickInvoiceWidget()),
+        const SliverToBoxAdapter(
           child: CardSection(
             istablet: true,
           ),
         ),
-        SliverToBoxAdapter(
+        const SliverToBoxAdapter(
           child: IncomeSection(),
         )
       ],
