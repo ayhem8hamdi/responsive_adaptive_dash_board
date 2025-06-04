@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/detailed_income_chart.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/income_chart_header.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/income_chart_item.dart';
 import 'package:responsive_dash_board/feautures/home_feature/presentation/views/widgets/income_insights.dart';
@@ -44,7 +45,7 @@ class ChartSection extends StatelessWidget {
     return (w <= 1250 && w >= 1140)
         ? const AspectRatio(
             aspectRatio: 1,
-            child: Incomechart(),
+            child: Detailedincomechart(),
           )
         : const ChartSectionBigLaptop();
   }
