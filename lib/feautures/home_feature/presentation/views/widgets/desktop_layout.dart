@@ -14,16 +14,35 @@ class DesktopLayout extends StatelessWidget {
         SizedBox(
           width: 32,
         ),
-        Expanded(flex: 5, child: DesktopBody()),
-        SizedBox(
-          width: 24,
-        ),
-        Expanded(flex: 3, child: RightSection()),
-        SizedBox(
-          width: 24,
-        )
+        Expanded(flex: 8, child: DesktopBodyAndRightSection()),
       ],
     );
   }
 }
-//2 - 5 - 3
+
+class DesktopBodyAndRightSection extends StatelessWidget {
+  const DesktopBodyAndRightSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
+          child: Row(
+            children: [
+              Expanded(flex: 5, child: DesktopBody()),
+              SizedBox(
+                width: 24,
+              ),
+              Expanded(flex: 3, child: RightSection()),
+              SizedBox(
+                width: 24,
+              )
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}

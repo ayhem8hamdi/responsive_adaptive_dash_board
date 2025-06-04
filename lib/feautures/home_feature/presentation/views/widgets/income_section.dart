@@ -26,13 +26,34 @@ class IncomeSectionBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [IncomeSectionHeader(), SizedBox(height: 16), ChartSection()],
+      children: [
+        IncomeSectionHeader(),
+        SizedBox(height: 16),
+        ChartSection(),
+      ],
     );
   }
 }
 
 class ChartSection extends StatelessWidget {
   const ChartSection({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final double w = MediaQuery.sizeOf(context).width;
+    return (w <= 1250 && w >= 1140)
+        ? const AspectRatio(
+            aspectRatio: 1,
+            child: Incomechart(),
+          )
+        : const ChartSectionBigLaptop();
+  }
+}
+
+class ChartSectionBigLaptop extends StatelessWidget {
+  const ChartSectionBigLaptop({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

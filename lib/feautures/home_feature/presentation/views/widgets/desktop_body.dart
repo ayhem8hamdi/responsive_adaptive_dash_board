@@ -7,10 +7,10 @@ class DesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(child: AllExpansesWidget()),
-        SliverToBoxAdapter(child: QuickInvoiceWidget()),
+    return const Column(
+      children: [
+        AllExpansesWidget(),
+        QuickInvoiceWidget(),
       ],
     );
   }

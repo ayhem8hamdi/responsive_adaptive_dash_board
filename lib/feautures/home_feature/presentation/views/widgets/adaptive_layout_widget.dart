@@ -16,7 +16,7 @@ class AdaptiveLayoutWidget extends StatelessWidget {
       log('media : ${MediaQuery.of(context).size.width}');
       if (constrains.maxWidth < 800) {
         return mobileLayout(context);
-      } else if (constrains.maxWidth < 1145 && constrains.maxWidth >= 600) {
+      } else if (constrains.maxWidth < 1140 && constrains.maxWidth >= 600) {
         return tabletLayout(context);
       } else {
         return desktopLayout(context);
@@ -24,3 +24,4 @@ class AdaptiveLayoutWidget extends StatelessWidget {
     });
   }
 }
+//1303

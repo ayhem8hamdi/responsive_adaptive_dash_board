@@ -7,15 +7,13 @@ class RightSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const CustomScrollView(
-      slivers: [
-        SliverToBoxAdapter(
-          child: CardSection(),
-        ),
-        SliverToBoxAdapter(
-          child: IncomeSection(),
-        )
-      ],
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          CardSection(),
+          IncomeSection(),
+        ],
+      ),
     );
   }
 }
