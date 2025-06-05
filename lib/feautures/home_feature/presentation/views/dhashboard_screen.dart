@@ -15,7 +15,7 @@ class _DhashboardscreenState extends State<Dhashboardscreen> {
 
   @override
   Widget build(BuildContext context) {
-    final bool isMobile = MediaQuery.of(context).size.width - 64 < 800;
+    final bool isMobile = MediaQuery.of(context).size.width < 800;
 
     return Scaffold(
       key: _scaffoldKey,
