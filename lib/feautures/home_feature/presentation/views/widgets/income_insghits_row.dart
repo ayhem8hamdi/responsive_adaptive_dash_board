@@ -19,12 +19,12 @@ class IncomeInsightsRow extends StatelessWidget {
         const SizedBox(width: 10),
         Text(
           chartModel.type,
-          style: AppStyles.styleRegular16,
+          style: AppStyles.styleRegular16(context),
         ),
         const Spacer(),
         Text(
           chartModel.pourcentage,
-          style: AppStyles.styleMedium20
+          style: AppStyles.styleMedium20(context)
               .copyWith(color: AppColors.kSecondaryColor),
         )
       ],

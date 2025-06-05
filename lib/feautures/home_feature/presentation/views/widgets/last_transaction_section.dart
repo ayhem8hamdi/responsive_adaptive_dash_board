@@ -8,7 +8,7 @@ class QuickInvoiceMeduimTitles extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: AppStyles.styleRegular16,
+      style: AppStyles.styleRegular16(context),
     );
   }
 }

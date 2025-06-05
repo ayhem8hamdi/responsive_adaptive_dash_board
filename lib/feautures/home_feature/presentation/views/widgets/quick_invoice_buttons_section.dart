@@ -9,15 +9,24 @@ class QuickInvoiceButtonsSection extends StatelessWidget {
     return const Row(
       children: [
         Expanded(
-          child: QuickInvoiceButtonItem(
-              color: Color(0XFFFFFFFF), text: 'Add more details'),
-        ),
-        SizedBox(
-          width: 24,
-        ),
-        Expanded(
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
             child: QuickInvoiceButtonItem(
-                color: Color(0XFF4EB7F2), text: 'Send Money')),
+              color: Color(0XFFFFFFFF),
+              text: 'Add more details',
+            ),
+          ),
+        ),
+        SizedBox(width: 24),
+        Expanded(
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: QuickInvoiceButtonItem(
+              color: Color(0XFF4EB7F2),
+              text: 'Send Money',
+            ),
+          ),
+        ),
       ],
     );
   }

@@ -12,14 +12,14 @@ class TransactionHistoryHeader extends StatelessWidget {
       children: [
         FittedText(
           text: 'Transaction History',
-          style: AppStyles.styleSemiBold20,
+          style: AppStyles.styleSemiBold20(context),
         ),
         const Spacer(),
         Padding(
           padding: const EdgeInsets.only(right: 12),
           child: FittedText(
               text: 'See all',
-              style: AppStyles.styleMedium20
+              style: AppStyles.styleMedium20(context)
                   .copyWith(color: AppColors.kSecondaryColor, fontSize: 16)),
         )
       ],

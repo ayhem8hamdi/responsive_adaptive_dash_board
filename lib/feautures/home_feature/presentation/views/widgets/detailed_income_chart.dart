@@ -60,7 +60,7 @@ class _DetailedincomechartState extends State<Detailedincomechart> {
                     color: colors[index],
                     radius: radius,
                     showTitle: !isTouched,
-                    titleStyle: AppStyles.styleSemiBold16.copyWith(
+                    titleStyle: AppStyles.styleSemiBold16(context).copyWith(
                       color: Colors.white,
                       fontSize: centerTextSize * 0.8,
                     ),
@@ -74,15 +74,15 @@ class _DetailedincomechartState extends State<Detailedincomechart> {
                 children: [
                   Text(
                     labels[touchedIndex!],
-                    style: AppStyles.styleSemiBold16.copyWith(
-                      color: Colors.black,
+                    style: AppStyles.styleSemiBold16(context).copyWith(
+                      color: const Color(0XFF064061),
                       fontSize: centerTextSize,
                     ),
                   ),
                   Text(
                     '${values[touchedIndex!]}%',
-                    style: AppStyles.styleSemiBold16.copyWith(
-                      color: Colors.grey.shade600,
+                    style: AppStyles.styleSemiBold16(context).copyWith(
+                      color: const Color(0XFF208CC8),
                       fontSize: centerTextSize * 0.9,
                     ),
                   ),

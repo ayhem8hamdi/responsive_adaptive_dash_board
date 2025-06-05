@@ -31,7 +31,7 @@ class _MyCardUpperItemsState extends State<MyCardUpperItems> {
       children: [
         Text(
           'My Card',
-          style: AppStyles.styleSemiBold20
+          style: AppStyles.styleSemiBold20(context)
               .copyWith(color: AppColors.kPrimaryColor),
         ),
         const SizedBox(

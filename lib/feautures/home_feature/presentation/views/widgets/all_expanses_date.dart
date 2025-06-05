@@ -23,7 +23,7 @@ class AllExpansesDate extends StatelessWidget {
         children: [
           Text(
             'Monthly',
-            style: AppStyles.styleMedium20
+            style: AppStyles.styleMedium20(context)
                 .copyWith(fontSize: 16, color: AppColors.kPrimaryColor),
           ),
           const SizedBox(

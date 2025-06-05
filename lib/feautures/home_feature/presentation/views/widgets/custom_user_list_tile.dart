@@ -24,9 +24,9 @@ class CustomUserListTile extends StatelessWidget {
               width: 35,
             ),
             title: FittedText(
-                text: user.userName, style: AppStyles.styleSemiBold16),
+                text: user.userName, style: AppStyles.styleSemiBold16(context)),
             subtitle: FittedText(
-                text: user.userMail, style: AppStyles.styleRegular12)),
+                text: user.userMail, style: AppStyles.styleRegular12(context))),
       ),
     );
   }

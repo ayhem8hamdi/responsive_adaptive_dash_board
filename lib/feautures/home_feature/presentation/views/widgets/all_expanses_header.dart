@@ -13,7 +13,7 @@ class AllExpansesHeader extends StatelessWidget {
         children: [
           Text(
             'All Expanses',
-            style: AppStyles.styleSemiBold20,
+            style: AppStyles.styleSemiBold20(context),
           ),
           const Spacer(),
           const AllExpansesDate()

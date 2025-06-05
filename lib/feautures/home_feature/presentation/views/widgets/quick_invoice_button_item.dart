@@ -17,7 +17,7 @@ class QuickInvoiceButtonItem extends StatelessWidget {
       child: Center(
         child: FittedText(
           text: text,
-          style: AppStyles.styleSemiBold18.copyWith(
+          style: AppStyles.styleSemiBold18(context).copyWith(
               color: color == const Color(0XFFFFFFFF)
                   ? AppColors.kSecondaryColor
                   : const Color(0XFFFFFFFF)),

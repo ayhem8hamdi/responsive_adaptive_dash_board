@@ -26,20 +26,20 @@ class TransactionHistoryItem extends StatelessWidget {
           padding: const EdgeInsets.only(left: 4, top: 8),
           child: FittedText(
             text: transactionModel.name,
-            style: AppStyles.styleSemiBold16,
+            style: AppStyles.styleSemiBold16(context),
           ),
         ),
         subtitle: Padding(
           padding: const EdgeInsets.only(top: 4, left: 4, bottom: 8),
           child: FittedText(
             text: transactionModel.date,
-            style:
-                AppStyles.styleRegular16.copyWith(color: AppColors.kThirdColor),
+            style: AppStyles.styleRegular16(context)
+                .copyWith(color: AppColors.kThirdColor),
           ),
         ),
         trailing: FittedText(
           text: transactionModel.mount,
-          style: AppStyles.styleSemiBold20.copyWith(color: color),
+          style: AppStyles.styleSemiBold20(context).copyWith(color: color),
         ),
       ),
     );

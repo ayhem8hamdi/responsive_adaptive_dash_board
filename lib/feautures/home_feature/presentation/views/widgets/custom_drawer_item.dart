@@ -36,7 +36,7 @@ class InactiveListTile extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Text(
           item.title,
-          style: AppStyles.styleRegular16,
+          style: AppStyles.styleRegular16(context),
         ),
       ),
     );
@@ -64,7 +64,7 @@ class ActiveListTile extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Text(
           item.title,
-          style: AppStyles.styleBold16,
+          style: AppStyles.styleBold16(context),
         ),
       ),
     );

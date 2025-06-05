@@ -30,12 +30,13 @@ class ActiveCardItem extends StatelessWidget {
           ),
           FittedText(
             text: item.type,
-            style: AppStyles.styleSemiBold16.copyWith(color: Colors.white),
+            style: AppStyles.styleSemiBold16(context)
+                .copyWith(color: Colors.white),
           ),
           const SizedBox(height: 8),
           FittedText(
             text: item.date,
-            style: AppStyles.styleRegular14
+            style: AppStyles.styleRegular14(context)
                 .copyWith(color: const Color(0XFFFAFAFA)),
           ),
           const SizedBox(
@@ -43,7 +44,8 @@ class ActiveCardItem extends StatelessWidget {
           ),
           FittedText(
             text: item.price,
-            style: AppStyles.styleSemiBold24.copyWith(color: Colors.white),
+            style: AppStyles.styleSemiBold24(context)
+                .copyWith(color: Colors.white),
           )
         ],
       ),
