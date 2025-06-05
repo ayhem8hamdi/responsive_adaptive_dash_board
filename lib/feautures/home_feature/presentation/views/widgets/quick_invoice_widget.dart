@@ -22,7 +22,7 @@ class QuickInvoiceWidget extends StatelessWidget {
         children: [
           QuickInvoiceHeader(),
           SizedBox(
-            height: 14,
+            height: 3,
           ),
           QuickInvoiceMeduimTitles(
             text: 'Last Transaction',

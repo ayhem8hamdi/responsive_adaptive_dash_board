@@ -41,8 +41,8 @@ class ChartSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double w = MediaQuery.sizeOf(context).width;
-    return (w <= 1250 && w >= 1140)
+    final double w = MediaQuery.sizeOf(context).width - 64;
+    return (w <= 1200 && w >= 1100)
         ? const AspectRatio(
             aspectRatio: 1,
             child: Detailedincomechart(),
