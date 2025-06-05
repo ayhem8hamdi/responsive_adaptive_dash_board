@@ -17,7 +17,7 @@ double getScaleFactor(BuildContext context) {
   double width = MediaQuery.sizeOf(context).width - 64;
   log('tatat $width');
   if (width < SizeConfig.tablet) {
-    return width / 480;
+    return width / 470;
   } else if (width < SizeConfig.desktop) {
     return width / 970;
   } else {

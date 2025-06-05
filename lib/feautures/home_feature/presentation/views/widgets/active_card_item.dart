@@ -18,9 +18,12 @@ class ActiveCardItem extends StatelessWidget {
           ? const EdgeInsets.symmetric(horizontal: 12, vertical: 16)
           : const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       decoration: BoxDecoration(
-        color: const Color(0xFF4EB7F2),
-        borderRadius: BorderRadius.circular(12),
-      ),
+          color: const Color(0xFF4EB7F2),
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            width: 1,
+            color: const Color(0xFF4EB7F2),
+          )),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

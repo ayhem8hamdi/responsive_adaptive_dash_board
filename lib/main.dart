@@ -5,7 +5,7 @@ import 'package:responsive_dash_board/feautures/home_feature/presentation/views/
 void main() {
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => const DashBoard(),
     ),
   );
