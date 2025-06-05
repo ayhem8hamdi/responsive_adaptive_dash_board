@@ -10,12 +10,13 @@ class AllExpansesItemHeader extends StatelessWidget {
   final bool? isActive;
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.sizeOf(context).width - 45;
     return Row(
       children: [
         Container(
-          width: 60,
-          height: 60,
-          padding: const EdgeInsets.all(3),
+          width: width < 450 ? 40 : 60,
+          height: width < 450 ? 40 : 60,
+          padding: width < 450 ? EdgeInsets.zero : const EdgeInsets.all(3),
           decoration: ShapeDecoration(
             shape: const OvalBorder(),
             color: isActive == false
@@ -24,6 +25,8 @@ class AllExpansesItemHeader extends StatelessWidget {
           ),
           child: Center(
             child: SvgPicture.asset(
+              width: width < 450 ? 24 : 34, //24
+              height: width < 450 ? 24 : 34,
               image,
               color: isActive == false ? const Color(0xFF4EB7F2) : Colors.white,
             ),
@@ -33,6 +36,7 @@ class AllExpansesItemHeader extends StatelessWidget {
         Transform.rotate(
             angle: 3.1416,
             child: Icon(
+              size: width < 450 ? 14 : 24,
               Icons.arrow_back_ios_new_outlined,
               color: isActive == false ? AppColors.kPrimaryColor : Colors.white,
             ))
